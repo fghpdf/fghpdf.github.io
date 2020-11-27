@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Hello World - Hexo</title>
+  <title>Context in golang - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Context in golang">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-15 14:23" pubdate>
-        November 15, 2020 pm
+      <time datetime="2020-11-27 22:37" pubdate>
+        November 27, 2020 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      75 字
+      740 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      14
        分钟
     </span>
   
@@ -224,22 +224,112 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Context in golang</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre>
+              <h1 id="Context-In-Golang"><a href="#Context-In-Golang" class="headerlink" title="Context In Golang"></a>Context In Golang</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>the context in golang has some functions and types.</p>
+<p>We can see them in <a target="_blank" rel="noopener" href="https://golang.org/pkg/context/">document</a></p>
+<p>context package functions:</p>
+<pre><code class="hljs golang"><span class="hljs-comment">// WithCancel returns a copy of parent with a new Done channel. </span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithCancel</span><span class="hljs-params">(parent Context)</span> <span class="hljs-params">(ctx Context, cancel CancelFunc)</span></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre>
+<span class="hljs-comment">// WithDeadline returns a copy of the parent context with </span>
+<span class="hljs-comment">// the deadline adjusted to be no later than d.</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithDeadline</span><span class="hljs-params">(parent Context, d time.Time)</span> <span class="hljs-params">(Context, CancelFunc)</span></span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre>
+<span class="hljs-comment">// WithTimeout returns WithDeadline(parent, time.Now().Add(timeout)).</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithTimeout</span><span class="hljs-params">(parent Context, timeout time.Duration)</span> <span class="hljs-params">(Context, CancelFunc)</span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre>
+<p>2 types:</p>
+<pre><code class="hljs golang"><span class="hljs-keyword">type</span> CancelFunc
+<span class="hljs-keyword">type</span> Context
+    <span class="hljs-comment">// Background returns a non-nil, empty Context.</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Background</span><span class="hljs-params">()</span> <span class="hljs-title">Context</span></span>
+    <span class="hljs-comment">// TODO returns a non-nil, empty Context.</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">TODO</span><span class="hljs-params">()</span> <span class="hljs-title">Context</span></span>
+    <span class="hljs-comment">// WithValue returns a copy of parent in which the value associated with key is val.</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithValue</span><span class="hljs-params">(parent Context, key, val <span class="hljs-keyword">interface</span>&#123;&#125;)</span> <span class="hljs-title">Context</span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>important type – context</p>
+<pre><code class="hljs golang"><span class="hljs-keyword">type</span> Context <span class="hljs-keyword">interface</span> &#123;
+	Deadline() (deadline time.Time, ok <span class="hljs-keyword">bool</span>)
+	Done() &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>&#123;&#125;
+	Err() error
+	Value(key <span class="hljs-keyword">interface</span>&#123;&#125;) <span class="hljs-keyword">interface</span>&#123;&#125;
+&#125;</code></pre>
+
+<p>So we can sure there are three roles of context:</p>
+<ol>
+<li>Carry deadlines</li>
+<li>Cancellation signals</li>
+<li>Save Request-scoped values</li>
+</ol>
+<h2 id="When-we-use-it"><a href="#When-we-use-it" class="headerlink" title="When we use it?"></a>When we use it?</h2><p>In the actual situation, we will meet some questions:</p>
+<ul>
+<li>how to cancel a goroutine</li>
+<li>how to cancel a RPC/HTTP request</li>
+<li>how to trace a RPC/HTTP request</li>
+<li>…</li>
+</ul>
+<p>Due to a RPC/HTTP request is goroutine in Golang, so we can use context to cancel the request by canceling goroutine.</p>
+<p>Context can be put in a binary tree, actually, it has parent and child node.</p>
+<p>So when we want to cancel a request cross many goroutine, we can use context tree.</p>
+<p>Every node in the tree will sub the chan <code>Done</code>, when a node received the signal, the children will invoke <code>cancel()</code>.</p>
+<p>And type context has a map struct, so we can save k-v data in it.</p>
+<p>But it is better to save immutable information like:</p>
+<ol>
+<li>request id</li>
+<li>trace id</li>
+<li>user auth token</li>
+</ol>
+<h2 id="Create-a-context"><a href="#Create-a-context" class="headerlink" title="Create a context"></a>Create a context</h2><p>First we can create a empty context by <code>Background()</code> and <code>TODO()</code>.</p>
+<p>There are same function. </p>
+<p>But using <code>TODO()</code> that means you don’t know which context to use ot it is not yet available.</p>
+<p>A empty context is never canceled, has no values, and has no deadline.</p>
+<p>We usually use them in following:</p>
+<ul>
+<li>main function</li>
+<li>initialization</li>
+<li>test case</li>
+<li>top-level Context for incoming requests</li>
+</ul>
+<p>When we have a context, we can use <code>WithCancel()</code>, <code>WithDeadline()</code> and <code>WithTimeout()</code> to create a child one.</p>
+<p>We can see the source of <code>WithCancel()</code>:</p>
+<pre><code class="hljs golang"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithCancel</span><span class="hljs-params">(parent Context)</span> <span class="hljs-params">(ctx Context, cancel CancelFunc)</span></span> &#123;
+	c := newCancelCtx(parent)
+	propagateCancel(parent, &amp;c)
+	<span class="hljs-keyword">return</span> &amp;c, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123; c.cancel(<span class="hljs-literal">true</span>, Canceled) &#125;
+&#125;</code></pre>
+
+<p>The <code>propagateCancel</code> will connect parent and child of cancel function.</p>
+<p>First, if a context is empty, can be created by <code>Background()</code>, <code>Done()</code>, or is never canceled, can be created by <code>WithValue(emptyCtx, key, value)</code>, the <code>propagateCancel</code> will do nothing, parent will have no effect on children.</p>
+<p>And then, the function will use <code>select</code> to sub parent chan <code>Done</code>, if parent is done, child will cancel immediately.</p>
+<p>If not, the child will put into parent’s a list of children.</p>
+<p>If developer custom the type of context, the function will run a goroutine to sub chan <code>child.Done</code> and <code>parent.Done</code>.</p>
+<h2 id="Pass-Value"><a href="#Pass-Value" class="headerlink" title="Pass Value"></a>Pass Value</h2><p>Sometimes, we want to trace a request in RPC/HTTP. We can put a trace id in headers or meta data.</p>
+<p>In goroutine, we can pass some immutable information in context.</p>
+<p>And we should control the key, and use <code>GetXXX()</code> and <code>WithXXX()</code> to get and set value.</p>
+<pre><code class="hljs golang"><span class="hljs-keyword">type</span> privateCtxType <span class="hljs-keyword">string</span>
+<span class="hljs-keyword">var</span> (
+  reqID = privateCtxType(<span class="hljs-string">&quot;req-id&quot;</span>)
+)
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">GetRequestID</span><span class="hljs-params">(ctx context.Context)</span> <span class="hljs-params">(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">bool</span>)</span></span> &#123;
+  id, exists := ctx.Value(reqID).(<span class="hljs-keyword">int</span>)
+  <span class="hljs-keyword">return</span> id, exists
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithRequestID</span><span class="hljs-params">(ctx context.Context, reqId <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">context</span>.<span class="hljs-title">Context</span></span> &#123;
+  <span class="hljs-keyword">return</span> context.WithValue(ctx, reqID, reqId)
+&#125;
+</code></pre>
+
+<h2 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h2><p>There are currently two ways to integrate Context objects into your API:</p>
+<ul>
+<li>The first parameter of a function call</li>
+<li>Optional config on a request structure</li>
+</ul>
+<blockquote>
+<p>A great mental model of using Context is that it should flow through your program. Imagine a river or running water. This generally means that you don’t want to store it somewhere like in a struct. Nor do you want to keep it around any more than strictly needed. Context should be an interface that is passed from function to function down your call stack, augmented as needed. Ideally, a Context object is created with each request and expires when the request is over.</p>
+</blockquote>
 
             </div>
             <hr>
@@ -247,9 +337,18 @@
               <div class="post-metas mb-3">
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Golang/">Golang</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Interview/">Interview</a>
+                    
+                  </div>
+                
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning"><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0</a> </p>
               
               
                 <div class="post-prevnext row">
@@ -259,6 +358,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2020/11/27/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
