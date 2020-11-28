@@ -149,3 +149,14 @@ There are currently two ways to integrate Context objects into your API:
 
 > A great mental model of using Context is that it should flow through your program. Imagine a river or running water. This generally means that you don’t want to store it somewhere like in a struct. Nor do you want to keep it around any more than strictly needed. Context should be an interface that is passed from function to function down your call stack, augmented as needed. Ideally, a Context object is created with each request and expires when the request is over.
 
+## Different with Gin Context
+
+Gin use context to extend middleware.
+
+The framework is as like `koa` in Node.js.
+
+The middleware will be invoked twice in request and response.
+
+And if we want to pass value in middleware, we can put k-v data in context.
+
+But also, context of gin had implement the golang context interface.
