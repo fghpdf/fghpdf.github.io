@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      740 字
+      796 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      15
        分钟
     </span>
   
@@ -330,6 +330,11 @@
 <blockquote>
 <p>A great mental model of using Context is that it should flow through your program. Imagine a river or running water. This generally means that you don’t want to store it somewhere like in a struct. Nor do you want to keep it around any more than strictly needed. Context should be an interface that is passed from function to function down your call stack, augmented as needed. Ideally, a Context object is created with each request and expires when the request is over.</p>
 </blockquote>
+<h2 id="Different-with-Gin-Context"><a href="#Different-with-Gin-Context" class="headerlink" title="Different with Gin Context"></a>Different with Gin Context</h2><p>Gin use context to extend middleware.</p>
+<p>The framework is as like <code>koa</code> in Node.js.</p>
+<p>The middleware will be invoked twice in request and response.</p>
+<p>And if we want to pass value in middleware, we can put k-v data in context.</p>
+<p>But also, context of gin had implement the golang context interface.</p>
 
             </div>
             <hr>
@@ -355,15 +360,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2020/11/28/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2020/11/27/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
