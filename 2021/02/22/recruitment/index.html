@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Context in golang - Hexo</title>
+  <title>Bybit 内推 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Context in golang">
+            <span class="h2" id="subtitle" title="Bybit 内推">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-27 22:37" pubdate>
-        November 27, 2020 pm
+      <time datetime="2021-02-22 20:44" pubdate>
+        February 22, 2021 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      796 字
+      1.6k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      22
        分钟
     </span>
   
@@ -224,132 +224,66 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Context in golang</h1>
+            <h1 style="display: none">Bybit 内推</h1>
             
             <div class="markdown-body">
-              <h1 id="Context-In-Golang"><a href="#Context-In-Golang" class="headerlink" title="Context In Golang"></a>Context In Golang</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>the context in golang has some functions and types.</p>
-<p>We can see them in <a target="_blank" rel="noopener" href="https://golang.org/pkg/context/">document</a></p>
-<p>context package functions:</p>
-<pre><code class="hljs golang"><span class="hljs-comment">// WithCancel returns a copy of parent with a new Done channel. </span>
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithCancel</span><span class="hljs-params">(parent Context)</span> <span class="hljs-params">(ctx Context, cancel CancelFunc)</span></span>
-
-<span class="hljs-comment">// WithDeadline returns a copy of the parent context with </span>
-<span class="hljs-comment">// the deadline adjusted to be no later than d.</span>
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithDeadline</span><span class="hljs-params">(parent Context, d time.Time)</span> <span class="hljs-params">(Context, CancelFunc)</span></span>
-
-<span class="hljs-comment">// WithTimeout returns WithDeadline(parent, time.Now().Add(timeout)).</span>
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithTimeout</span><span class="hljs-params">(parent Context, timeout time.Duration)</span> <span class="hljs-params">(Context, CancelFunc)</span></span></code></pre>
-
-<p>2 types:</p>
-<pre><code class="hljs golang"><span class="hljs-keyword">type</span> CancelFunc
-<span class="hljs-keyword">type</span> Context
-    <span class="hljs-comment">// Background returns a non-nil, empty Context.</span>
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">Background</span><span class="hljs-params">()</span> <span class="hljs-title">Context</span></span>
-    <span class="hljs-comment">// TODO returns a non-nil, empty Context.</span>
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">TODO</span><span class="hljs-params">()</span> <span class="hljs-title">Context</span></span>
-    <span class="hljs-comment">// WithValue returns a copy of parent in which the value associated with key is val.</span>
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithValue</span><span class="hljs-params">(parent Context, key, val <span class="hljs-keyword">interface</span>&#123;&#125;)</span> <span class="hljs-title">Context</span></span></code></pre>
-
-<p>important type – context</p>
-<pre><code class="hljs golang"><span class="hljs-keyword">type</span> Context <span class="hljs-keyword">interface</span> &#123;
-	Deadline() (deadline time.Time, ok <span class="hljs-keyword">bool</span>)
-	Done() &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>&#123;&#125;
-	Err() error
-	Value(key <span class="hljs-keyword">interface</span>&#123;&#125;) <span class="hljs-keyword">interface</span>&#123;&#125;
-&#125;</code></pre>
-
-<p>So we can sure there are three roles of context:</p>
+              <h2 id="新加坡-数字货币交易所-Bybit-内推"><a href="#新加坡-数字货币交易所-Bybit-内推" class="headerlink" title="[新加坡] 数字货币交易所 Bybit 内推"></a>[新加坡] 数字货币交易所 Bybit 内推</h2><p>出国工作和国内换个城市并不一样，请结合<strong>自身情况</strong>，多去了解目标国家更多的实际情况，再三考虑后再做决定。</p>
+<p>某些人因为某些目的只说优点或者故意隐去一些事实，这个在网上收集信息的时候需要有自己的判断力。</p>
+<p>关于新加坡的生活，王奥大佬有自己的心得，虽然不是面面俱到，但是基本足够去了解新加坡了。<br><a target="_blank" rel="noopener" href="https://wsgzao.github.io/post/singapore/">从国内跳槽至新加坡工作的经验分享</a></p>
+<h3 id="公司简介"><a href="#公司简介" class="headerlink" title="公司简介"></a>公司简介</h3><p>Bybit 位于新加坡市中心，是一家数字货币交易所。<a target="_blank" rel="noopener" href="https://www.bybit.com/">官网</a></p>
+<p>公司成立于 2018 年，目前聚焦于数字货币衍生品领域，也就是合约。</p>
+<p>公司目前发展状况良好，发展势头很猛，虽然和排名靠前的老大哥还有不小的差距，但公司也有自己的战略规划。</p>
+<p>这里可能有个误区，数字货币交易所是搞区块链的，不完全对。</p>
+<p>就比如有色金属交易所，鲜花交易所，期货交易所等等。交易所一般不会直接生产在自己交易所交易的商品，交易所就是一个市场，是进行交易的地方。当然因为数字货币的特殊性，有些交易所确实会发行自己的货币，但交易所主营业务依然是交易商品。</p>
+<p>所以 Bybit 日常的工作也是在处理频繁的合约交易。</p>
+<h3 id="工作环境以及福利"><a href="#工作环境以及福利" class="headerlink" title="工作环境以及福利"></a>工作环境以及福利</h3><ul>
+<li>EP 签证（会尽量争取，一般政府都会签发，没过的话还可以申请 SP）</li>
+<li>MacBook Pro</li>
+<li>独立显示器</li>
+<li>弹性工时（上下班不打卡），一周 5 天 45 小时（新加坡政府规定）</li>
+<li>一般不加班（有的时候确实会急着上线，所以加班到 8-9 点打车回家）</li>
+<li>15+ 年假</li>
+<li>育儿假期，婚丧嫁娶假期等福利齐全</li>
+<li>逢年过节和生日大红包</li>
+<li>无限零食、水果和饮料供应</li>
+<li>友好的团队氛围</li>
+</ul>
+<p>以及最重要的：<strong>一份充满竞争力的薪资</strong></p>
+<p>年薪最高能到 n * 24，一般是 n * 17 – 18</p>
+<p><strong>注意</strong>：薪资待遇请和专业的 HR 谈判，和我说的再多也没办法提高你的薪资，我本人的薪资待遇既是个人隐私也是保密信息。<br>对于陌生人直接询问个人隐私我并不会作出任何回答。</p>
+<p><strong>有意向或者疑惑的可以通过邮件与我交流：<a href="mailto:&#x66;&#x67;&#104;&#x70;&#100;&#102;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#111;&#107;&#46;&#99;&#x6f;&#x6d;">&#x66;&#x67;&#104;&#x70;&#100;&#102;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#111;&#107;&#46;&#99;&#x6f;&#x6d;</a></strong></p>
+<h3 id="面试流程"><a href="#面试流程" class="headerlink" title="面试流程"></a>面试流程</h3><p>我们面试更多以<strong>实际问题</strong>考核为主，不排除部分团队会考察算法，但流程推进很快，不会故意吊着胃口。</p>
+<p>面试可以安排中文面试，面试官一般是华人。</p>
+<p>并不建议毫无准备就来面试，虽然面试不一定会反应真实水平，但是准备越多，机会越多。</p>
+<h3 id="岗位"><a href="#岗位" class="headerlink" title="岗位"></a>岗位</h3><p>所有岗位在 <a target="_blank" rel="noopener" href="http://bit.ly/3nNqaVG">这里</a> 可以直接查看，但是需要科学上网。</p>
+<p>那么我们需要什么人才呢？</p>
+<p>人才的需求也是因为场景使然。目前公司遇到了：</p>
 <ol>
-<li>Carry deadlines</li>
-<li>Cancellation signals</li>
-<li>Save Request-scoped values</li>
+<li>交易依然是一门复杂的艺术，需要更多懂交易的人；</li>
+<li>技术团队也很年轻，需要更多有宝贵经验的人；</li>
+<li>数字货币行业如火如荼，需要更多有区块链经验的人；</li>
 </ol>
-<h2 id="When-we-use-it"><a href="#When-we-use-it" class="headerlink" title="When we use it?"></a>When we use it?</h2><p>In the actual situation, we will meet some questions:</p>
-<ul>
-<li>how to cancel a goroutine</li>
-<li>how to cancel a RPC/HTTP request</li>
-<li>how to trace a RPC/HTTP request</li>
-<li>…</li>
-</ul>
-<p>Due to a RPC/HTTP request is goroutine in Golang, so we can use context to cancel the request by canceling goroutine.</p>
-<p>Context can be put in a binary tree, actually, it has parent and child node.</p>
-<p>So when we want to cancel a request cross many goroutine, we can use context tree.</p>
-<p>Every node in the tree will sub the chan <code>Done</code>, when a node received the signal, the children will invoke <code>cancel()</code>.</p>
-<p>And type context has a map struct, so we can save k-v data in it.</p>
-<p>But it is better to save immutable information like:</p>
-<ol>
-<li>request id</li>
-<li>trace id</li>
-<li>user auth token</li>
-</ol>
-<h2 id="Create-a-context"><a href="#Create-a-context" class="headerlink" title="Create a context"></a>Create a context</h2><p>First we can create a empty context by <code>Background()</code> and <code>TODO()</code>.</p>
-<p>There are same function. </p>
-<p>But using <code>TODO()</code> that means you don’t know which context to use ot it is not yet available.</p>
-<p>A empty context is never canceled, has no values, and has no deadline.</p>
-<p>We usually use them in following:</p>
-<ul>
-<li>main function</li>
-<li>initialization</li>
-<li>test case</li>
-<li>top-level Context for incoming requests</li>
-</ul>
-<p>When we have a context, we can use <code>WithCancel()</code>, <code>WithDeadline()</code> and <code>WithTimeout()</code> to create a child one.</p>
-<p>We can see the source of <code>WithCancel()</code>:</p>
-<pre><code class="hljs golang"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithCancel</span><span class="hljs-params">(parent Context)</span> <span class="hljs-params">(ctx Context, cancel CancelFunc)</span></span> &#123;
-	c := newCancelCtx(parent)
-	propagateCancel(parent, &amp;c)
-	<span class="hljs-keyword">return</span> &amp;c, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123; c.cancel(<span class="hljs-literal">true</span>, Canceled) &#125;
-&#125;</code></pre>
-
-<p>The <code>propagateCancel</code> will connect parent and child of cancel function.</p>
-<p>First, if a context is empty, can be created by <code>Background()</code>, <code>Done()</code>, or is never canceled, can be created by <code>WithValue(emptyCtx, key, value)</code>, the <code>propagateCancel</code> will do nothing, parent will have no effect on children.</p>
-<p>And then, the function will use <code>select</code> to sub parent chan <code>Done</code>, if parent is done, child will cancel immediately.</p>
-<p>If not, the child will put into parent’s a list of children.</p>
-<p>If developer custom the type of context, the function will run a goroutine to sub chan <code>child.Done</code> and <code>parent.Done</code>.</p>
-<h2 id="Pass-Value"><a href="#Pass-Value" class="headerlink" title="Pass Value"></a>Pass Value</h2><p>Sometimes, we want to trace a request in RPC/HTTP. We can put a trace id in headers or meta data.</p>
-<p>In goroutine, we can pass some immutable information in context.</p>
-<p>And we should control the key, and use <code>GetXXX()</code> and <code>WithXXX()</code> to get and set value.</p>
-<pre><code class="hljs golang"><span class="hljs-keyword">type</span> privateCtxType <span class="hljs-keyword">string</span>
-<span class="hljs-keyword">var</span> (
-  reqID = privateCtxType(<span class="hljs-string">&quot;req-id&quot;</span>)
-)
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">GetRequestID</span><span class="hljs-params">(ctx context.Context)</span> <span class="hljs-params">(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">bool</span>)</span></span> &#123;
-  id, exists := ctx.Value(reqID).(<span class="hljs-keyword">int</span>)
-  <span class="hljs-keyword">return</span> id, exists
-&#125;
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">WithRequestID</span><span class="hljs-params">(ctx context.Context, reqId <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">context</span>.<span class="hljs-title">Context</span></span> &#123;
-  <span class="hljs-keyword">return</span> context.WithValue(ctx, reqID, reqId)
-&#125;
-</code></pre>
-
-<h2 id="Using"><a href="#Using" class="headerlink" title="Using"></a>Using</h2><p>There are currently two ways to integrate Context objects into your API:</p>
-<ul>
-<li>The first parameter of a function call</li>
-<li>Optional config on a request structure</li>
-</ul>
-<blockquote>
-<p>A great mental model of using Context is that it should flow through your program. Imagine a river or running water. This generally means that you don’t want to store it somewhere like in a struct. Nor do you want to keep it around any more than strictly needed. Context should be an interface that is passed from function to function down your call stack, augmented as needed. Ideally, a Context object is created with each request and expires when the request is over.</p>
-</blockquote>
-<h2 id="Different-with-Gin-Context"><a href="#Different-with-Gin-Context" class="headerlink" title="Different with Gin Context"></a>Different with Gin Context</h2><p>Gin use context to extend middleware.</p>
-<p>The framework is as like <code>koa</code> in Node.js.</p>
-<p>The middleware will be invoked twice in request and response.</p>
-<p>And if we want to pass value in middleware, we can put k-v data in context.</p>
-<p>But also, context of gin had implement the golang context interface.</p>
+<p>您如果满足其中任何一个条件，不妨来挑战一下，我相信我们 HR 会给人才一份满意的薪资。（没有的话我就气鼓鼓地去讨要说法！）</p>
+<p>限于篇幅问题，我仅截取 4 个岗位</p>
+<h4 id="Back-End-Engineer"><a href="#Back-End-Engineer" class="headerlink" title="Back End Engineer"></a>Back End Engineer</h4><p>Singapore</p>
+<p>Responsibilities<br>• Development language: PHP &amp; Golang<br>• Responsible for the architectural design and development<br>• Research and explore improvements of the architecture to deliver large scale and high performance trading solutions</p>
+<p>Requirements<br>• Bachelor’s degree in Computer Science or relevant studies<br>• At least 3 years of experience in LAMP development and high concurrency and transaction related system development<br>• Proficient in PHP or Golang<br>• Knowledge in HTTP, WebSocket, TCP / IP protocols<br>• Familiar with the principles of Unix / Linux operating system and skilled in using shell tools<br>• Proficient in MySQL and Oracle databases and SQL tuning/optimization<br>• Familiar with common open source middleware such as NoSql/MQ<br>• Team player with good communication and problem solving skills</p>
+<h4 id="Front-End-Engineer"><a href="#Front-End-Engineer" class="headerlink" title="Front End Engineer"></a>Front End Engineer</h4><p>Singapore</p>
+<p>Responsibilities<br>• Develop &amp; maintain website performance, including desktop and mobile functions<br>• Work closely with our Shanghai operations team to ensure smooth functioning of operations<br>• Support and implementation of CRM systems and requesting functions from customer operation center<br>• Development and maintenance of our chat-rooms/forums<br>• Support other internal teams with any ad-hoc technical issues and provide relevant solutions</p>
+<p>Requirements<br>• At least 2 years of experience with HTML/CSS/Javascript and ES6 syntax<br>• Experience with one of the MVVM frameworks (Vue.js / React.js) and is familiar with their technology ecosystems<br>• Proficient in at least one back-end language (node.js, PHP, go)<br>• Candidates with Next.js or Nuxt.js experience are highly preferred<br>• Practical experiences in front-end performance optimization and SEO<br>• Familiar with HTTP and understands the life cycle of a HTTP request<br>• Ability to complete the setup of complex front-end module design and system architecture independently in a timely fashion<br>• Possesses a deep understanding and on-the-job experience in enhancing user experience and interactive operational processes<br>• Team player with good communication and problem solving skills<br>• Proficient in Chinese in order to liaise with Mandarin-speaking affiliatesje</p>
+<h4 id="Senior-Java-Developer"><a href="#Senior-Java-Developer" class="headerlink" title="Senior Java Developer"></a>Senior Java Developer</h4><p>Singapore</p>
+<p>Responsibilities<br>• Responsible for the architecture and R&amp;D of the company’s platform services<br>• Continuously deliver data value (services) for the company in high quality, low cost, and excellent efficiency<br>• Provide architecture and performance optimization solutions, and lead the rapid iteration of the data platform services<br>• Familiar with distributed system, caching, messaging and other mechanism, have experience in using redis, kafka, storm, flink, zookeeper.</p>
+<p>Requirements<br>• Degree or above in Computer Science, Computer Engineering, Math or a related field with strong experience in Java development, and in depth understanding of JVM principles<br>• Familiar with common framework (Spring, Mybatis)<br>• Solid computer science foundation, master computer operating system, network architecture, familiar with common algorithms, data structure and design patterns<br>• Familiar with distributed system, caching, messaging and other mechanism, using redis, kafka, storm, flink, zookeeper<br>• Experienced in data platform (front, middle, end) or microservice design and development, focusing on the high availability and scalability of the architecture is preferred</p>
+<h4 id="Senior-iOS-Development-Engineer"><a href="#Senior-iOS-Development-Engineer" class="headerlink" title="Senior iOS Development Engineer"></a>Senior iOS Development Engineer</h4><p>Singapore</p>
+<p>Responsibilities<br>• Responsible for the architecture design and development of the iOS platform, and technical research<br>• Responsible for iOS plugin development of Flutter platform<br>• Responsible for APP release and related document construction and maintenance, and be responsible for guiding other team members</p>
+<p>Requirements<br>• More than 5 years of iOS development experience, with financial product development experience is preferred, especially stock futures and other project experience<br>• Proficient in Objective-C or Swift<br>• In-depth understanding of Runtime operation mechanism and memory management mechanism<br>• Have a deep understanding and experience of Socket communication, TCP/IP and HTTP<br>• Good object-oriented programming ideas, proficient in common design patterns<br>• Have strong code control and technical design capabilities<br>• Strong security awareness and experience in dealing with wireless client and network security issues<br>• Have excellent team communication skills and team coordination management ability, can guide team members<br>• Experience in Flutter, ReactNative, HybridApp development is preferred</p>
+<p><img src="https://i.loli.net/2021/02/22/oLmqtOXruv7ZeJi.jpg" srcset="/img/loading.gif" alt="WeChat Image_20210222213545.jpg"><br><img src="https://i.loli.net/2021/02/22/K9FJReMP7D5pHbk.jpg" srcset="/img/loading.gif" alt="WeChat Image_20210222213553.jpg"></p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Golang/">Golang</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Interview/">Interview</a>
-                    
-                  </div>
                 
               </div>
               
@@ -360,15 +294,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/23/%E4%B8%80%E6%AC%A1%E8%B7%A8%E5%9B%BD%E8%AF%88%E9%AA%97/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一次跨国诈骗</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/02/22/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
